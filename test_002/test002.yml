@@ -12,7 +12,7 @@
     - name: Copy FIle.
       ansible.builtin.copy:
         src: ./file/config
-        dest: /.ssh/config
+        dest: ~/.ssh/config
         mode: 0600
       notify:
         - completed config copy
