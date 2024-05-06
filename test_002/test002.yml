@@ -1,0 +1,25 @@
+- name: Ignore fingerprints.
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Create Directory.
+      ansible.builtin.file:
+        path: .ssh
+        mode: 0700
+        state: directory
+
+    - name: Copy FIle.
+      ansible.builtin.copy:
+        src: ./file/config
+        dest: /.ssh/config
+        mode: 0600
+      notify:
+        - completed config copy
+
+  handlers:
+    - name: Copy exists.
+      ansible.builtin.debug:
+        msg: Copy exists.
+      listen:
+        - completed config copy
