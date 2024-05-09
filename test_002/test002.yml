@@ -14,7 +14,7 @@
         src: ./file/config
         dest: ~/.ssh/config
         mode: 0600
-        register: result
+      register: result
       notify:
         - completed config copy
 
