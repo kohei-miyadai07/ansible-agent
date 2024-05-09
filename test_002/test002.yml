@@ -14,12 +14,13 @@
         src: ./file/config
         dest: ~/.ssh/config
         mode: 0600
+        register: result
       notify:
         - completed config copy
 
   handlers:
     - name: Copy exists.
       ansible.builtin.debug:
-        msg: Copy exists.
+        msg: "{{ result }}"
       listen:
         - completed config copy
