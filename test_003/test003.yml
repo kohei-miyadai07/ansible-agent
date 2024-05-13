@@ -1,5 +1,5 @@
 - name: Ignore fingerprints.
-  hosts: mk_non
+  hosts: all
   gather_facts: no
 
   tasks:
@@ -24,3 +24,12 @@
         msg: "{{ result }}"
       listen:
         - completed config copy
+
+- name: test
+  hosts: mk_non
+  gather_facts: no
+
+  tasks:
+    - name: Test001
+      ansible.builtin.copy:
+        msg: "Test result001"
