@@ -1,0 +1,8 @@
+- name: File copy for windows.
+  hosts: mk_win_001
+
+  tasks:
+    - name: File copy text.
+      win_copy:
+        src: ./アプリケーション起動時のエラーメッセージ.txt
+        dest: C:\test
