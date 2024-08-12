@@ -6,3 +6,8 @@
       win_copy:
         src: ./アプリケーション起動時のエラーメッセージ.txt
         dest: C:\test
+    
+    - name: Zip copy.
+      win_copy:
+        src: ./metricbeat-8.15.0-windows-x86_64.zip
+        dest: C:\test\metricbeat.zip
